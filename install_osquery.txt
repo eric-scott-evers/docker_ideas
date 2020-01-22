@@ -1,0 +1,38 @@
+
+//
+// I want to experiment with osquery 
+// -- this worked on an aws amazon flavored linux instance 
+// -- working with a 
+// osquery prompt 
+//   inside bash 
+//     inside ubuntu 
+//       inside docker 
+//         inside aws linux
+//  yikes
+ 143  sudo yum update
+ 144  sudo yum install docker
+ 145  sudo service docker start
+ 146  sudo usermod -a -G docker ec2-user
+ 147  docker run hello-world
+ 148  sudo docker run hello-world
+ 149  sudo docker run -it ubuntu bash
+ 150  ls
+ 151  more test.txt
+ 152  osquery
+ 153*
+ 154  sudo docker run -it kolide/osquery bash
+ ------
+ root@788c299b4847:/# osqueryi
+Using a virtual database. Need help, type '.help'
+
+osquery> select processes.name, processes.pid from processes;
++----------+-----+
+| name     | pid |
++----------+-----+
+| bash     | 1   |
+| osqueryi | 16  |
++----------+-----+
+
+osquery> .tables 
+
+---- shows all tables 
